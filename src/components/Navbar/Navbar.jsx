@@ -11,8 +11,8 @@ const Navbar = () => {
 
 
     // Access Context api
-    const { logOut,user } = useContext(authContext);
-    
+    const { logOut, user } = useContext(authContext);
+
     const email = user ? user.email : null;
     console.log(email)
 

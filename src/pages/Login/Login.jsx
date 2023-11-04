@@ -1,4 +1,5 @@
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useContext, useState } from "react";
@@ -68,6 +69,7 @@ const Login = () => {
                         <button className="btn bg-red-400 text-white">Login</button>
                     </div>
                 </form>
+                <ToastContainer></ToastContainer>
 
                 {
                     loginError && <p className="text-red-800 text-center">Email or Password does not match</p>
