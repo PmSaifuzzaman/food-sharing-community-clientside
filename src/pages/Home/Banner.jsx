@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className="hero">
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={bannerImg} className="max-w-lg" />
+                <img src={bannerImg} className="lg:max-w-lg" />
                 <div>
                     <h1 className="text-5xl font-bold" style={{ fontFamily: 'Playpen Sans, cursive' }}>We accept <span className="text-red-400">food</span> sharing</h1>
                     <p className="py-6 text-xl" style={{ fontFamily: 'Playpen Sans, cursive' }}>We are looking for your Surplus. Food is the ingredient that binds us all, and sharing it is a celebration of our shared humanity.Food tastes better when shared with friends.</p>

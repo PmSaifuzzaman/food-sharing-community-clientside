@@ -130,7 +130,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user && <p className="font-semibold">{user?.email}</p>
+                    user && <p className="font-semibold hidden md:block">{user?.email}</p>
                 }
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div >
