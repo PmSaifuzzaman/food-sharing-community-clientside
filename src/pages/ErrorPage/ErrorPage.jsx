@@ -1,9 +1,9 @@
-
+import errorImg from "../../assets/images/errorPage.jpg"
 
 const ErrorPage = () => {
     return (
         <div>
-            <h1>Opps Content not found error</h1>
+            <img className="h-screen w-screen object-cover" src={errorImg} alt="" />
         </div>
     );
 };
