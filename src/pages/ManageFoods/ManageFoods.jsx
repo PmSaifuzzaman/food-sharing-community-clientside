@@ -3,38 +3,44 @@ import Navbar from "../../components/Navbar/Navbar";
 import { authContext } from "../../providers/AuthProvider";
 import ManageFoodCard from "./ManageFoodCard";
 
-
-
 const ManageFoods = () => {
-    const [manageFoods, setManageFoods] = useState([])
-    const { user } = useContext(authContext)
+    const [manageFoods, setManageFoods] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const { user } = useContext(authContext);
 
     const userEmail = user ? user.email : '';
-    console.log(userEmail)
+    console.log(userEmail);
 
-    const url = `http://localhost:5000/api/v1/availableAllfoods?donatorEmail=${userEmail}`
+    const url = `http://localhost:5000/api/v1/availableAllfoods?donatorEmail=${userEmail}`;
 
     useEffect(() => {
         if (userEmail) {
+            setIsLoading(true);
             fetch(url)
                 .then(res => res.json())
                 .then(data => {
-                    setManageFoods(data)
+                    setManageFoods(data);
+                    setIsLoading(false);
                 })
+                .catch(error => {
+                    console.error("Error:", error);
+                    setIsLoading(false);
+                });
         }
-
-    }, [userEmail])
-
-    console.log(manageFoods)
+    }, [userEmail]);
 
     return (
         <div>
-            <Navbar></Navbar>
-            <h2>Manage Food</h2>
+            <Navbar />
+            
             <div>
-                {
-                    manageFoods?.map(food => <ManageFoodCard key={food._id} food={food}></ManageFoodCard>)
-                }
+                {isLoading ? (
+                    <progress className="progress w-56 mx-auto"></progress>
+                ) : (
+                    manageFoods?.map(food => (
+                        <ManageFoodCard key={food._id} food={food} />
+                    ))
+                )}
             </div>
         </div>
     );
