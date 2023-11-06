@@ -1,11 +1,20 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import FoodCard from "../../components/FoodCard/FoodCard";
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 
 const AvailableFoods = () => {
     const [allFoods, setAllFoods] = useState([]);
     const [searchInput, setSearchInput] = useState('');
+
+    // For pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const cardsPerPage = 9;
+    const startIndex = (currentPage - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const displayedCards = allFoods.slice(startIndex, endIndex);
+
 
     useEffect(() => {
         fetch('http://localhost:5000/api/v1/availableAllfoods')
@@ -42,9 +51,38 @@ const AvailableFoods = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    allFoods?.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
+                    displayedCards?.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                 }
             </div>
+            {/* Pagination section for Displaying 9 cards */}
+            <div className="flex justify-center my-5">
+                <div className="join">
+                    <button
+                        onClick={() => setCurrentPage(currentPage - 1)}
+                        disabled={currentPage === 1}
+                        className="join-item btn"
+                    >
+                        <FaArrowLeft />
+                    </button>
+                    {Array.from({ length: Math.ceil(allFoods.length / cardsPerPage) }, (_, i) => (
+                        <button
+                            key={i + 1}
+                            className={`join-item btn ${i + 1 === currentPage ? 'btn-active' : ''}`}
+                            onClick={() => setCurrentPage(i + 1)}
+                        >
+                            {i + 1}
+                        </button>
+                    ))}
+                    <button
+                        onClick={() => setCurrentPage(currentPage + 1)}
+                        disabled={endIndex >= allFoods.length}
+                        className="join-item btn"
+                    >
+                        <FaArrowRight />
+                    </button>
+                </div>
+            </div>
+
         </div>
     );
 };
