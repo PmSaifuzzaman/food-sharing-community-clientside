@@ -103,7 +103,7 @@ const AddFood = () => {
                                 <span className="label-text">Expire date</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="expireDate" placeholder="Expire date" className="input input-bordered w-full" />
+                                <input type="date" name="expireDate" placeholder="Expire date" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">
@@ -141,7 +141,7 @@ const AddFood = () => {
                                 <span className="label-text">Donator email</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="donatorEmail" placeholder="Donator email" className="input input-bordered w-full" />
+                                <input type="email" name="donatorEmail" placeholder="Donator email" className="input input-bordered w-full" />
                             </label>
                         </div>
                         <div className="form-control md:w-1/2 ml-4">

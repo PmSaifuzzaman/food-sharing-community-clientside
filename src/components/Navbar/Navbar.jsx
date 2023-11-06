@@ -65,7 +65,7 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={"/blog"}
+                            <NavLink to={"/manageFoods"}
                                 className={({ isActive, isPending }) =>
                                     isPending ? "pending" : isActive ? "text-sky-400 underline font-medium" : ""
                                 }>
@@ -111,7 +111,7 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/blog"}
+                        <NavLink to={"/manageFoods"}
                             className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "text-sky-400 underline font-medium" : ""
                             }>

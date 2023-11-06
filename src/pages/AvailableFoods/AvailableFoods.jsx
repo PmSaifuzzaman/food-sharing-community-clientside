@@ -55,8 +55,8 @@ const AvailableFoods = () => {
                 }
             </div>
             {/* Pagination section for Displaying 9 cards */}
-            <div className="flex justify-center my-5">
-                <div className="join">
+            <div className="flex justify-center">
+                <div className="join ">
                     <button
                         onClick={() => setCurrentPage(currentPage - 1)}
                         disabled={currentPage === 1}
