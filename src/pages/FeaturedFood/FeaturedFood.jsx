@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import FoodCard from "../../components/FoodCard/FoodCard";
+import { Link } from "react-router-dom";
 
 
 const FeaturedFood = () => {
 
-    const[allFoods, setAllFoods] = useState([]);
+    const [allFoods, setAllFoods] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5000/api/v1/AllFeaturedFoods')
-        .then(res => res.json())
-        .then(data => setAllFoods(data))
+            .then(res => res.json())
+            .then(data => setAllFoods(data))
     }, [])
 
     console.log(allFoods)
@@ -21,6 +22,9 @@ const FeaturedFood = () => {
                 {
                     allFoods?.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
                 }
+            </div>
+            <div className=" flex justify-center">
+                <Link to={"/avaiableAllfoods"} className="btn my-10 bg-red-400 text-white items-center">Show All</Link>
             </div>
         </div>
     );
