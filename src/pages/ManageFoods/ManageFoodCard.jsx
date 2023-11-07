@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import PropTypes from 'prop-types';
 
 
-const ManageFoodCard = ({ food }) => {
+const ManageFoodCard = ({ food, manageFoods, setManageFoods }) => {
     const { _id, foodImage, foodName, foodQuantity, expireDate, pickupLocation } = food;
 
     const handleDelete = (_id) => {
@@ -32,6 +32,9 @@ const ManageFoodCard = ({ food }) => {
                                 'Your Food has been deleted.',
                                 'success'
                             )
+
+                            const remainingFood = manageFoods?.filter(food => food._id !== _id)
+                            setManageFoods(remainingFood)
 
                         }
                     })
@@ -86,4 +89,6 @@ export default ManageFoodCard;
 
 ManageFoodCard.propTypes = {
     food: PropTypes.object,
+    manageFoods: PropTypes.array,
+    setManageFoods: PropTypes.func
 }

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Swal from 'sweetalert2';
 
 
-const MyRequestsCard = ({food}) => {
+const MyRequestsCard = ({ food, myRequests, setMyRequests }) => {
 
-    const {_id, foodImage, foodName, donatorName, expireDate, pickupLocation,requestDateTime} = food;
+    const { _id, foodImage, foodName, donatorName, expireDate, pickupLocation, requestDateTime } = food;
 
     const handleDelete = (_id) => {
         console.log(_id)
@@ -34,6 +34,8 @@ const MyRequestsCard = ({food}) => {
                                 'success'
                             )
 
+                            const remainingRequests = myRequests?.filter(food => food._id !== _id)
+                            setMyRequests(remainingRequests)
                         }
                     })
             }
@@ -64,4 +66,6 @@ export default MyRequestsCard;
 
 MyRequestsCard.propTypes = {
     food: PropTypes.object,
+    myRequests: PropTypes.array,
+    setMyRequests: PropTypes.func
 }

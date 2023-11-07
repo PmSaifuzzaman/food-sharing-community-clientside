@@ -38,7 +38,7 @@ const ManageFoods = () => {
                     <progress className="progress w-56"></progress>
                 ) : (
                     manageFoods?.map(food => (
-                        <ManageFoodCard key={food._id} food={food} />
+                        <ManageFoodCard key={food._id} food={food} manageFoods={manageFoods} setManageFoods={setManageFoods} />
                     ))
                 )}
             </div>

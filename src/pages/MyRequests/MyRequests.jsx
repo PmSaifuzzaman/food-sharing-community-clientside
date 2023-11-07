@@ -6,7 +6,7 @@ import MyRequestsCard from "./MyRequestsCard";
 
 
 const MyRequests = () => {
-    const[myRequests, setMyRequests] = useState([])
+    const [myRequests, setMyRequests] = useState([])
     const [isLoading, setIsLoading] = useState(true);
     const { user } = useContext(authContext);
 
@@ -40,7 +40,7 @@ const MyRequests = () => {
                     <progress className="progress w-56"></progress>
                 ) : (
                     myRequests?.map(food => (
-                        <MyRequestsCard key={food._id} food={food} />
+                        <MyRequestsCard key={food._id} food={food} myRequests={myRequests} setMyRequests={setMyRequests} />
                     ))
                 )}
             </div>
