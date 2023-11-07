@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import PropTypes from 'prop-types';
 
 
 const ManageFoodCard = ({ food }) => {
-    const { _id, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate, pickupLocation } = food;
+    const { _id, foodImage, foodName, foodQuantity, expireDate, pickupLocation } = food;
 
     const handleDelete = (_id) => {
         console.log(_id)
@@ -81,3 +82,8 @@ const ManageFoodCard = ({ food }) => {
 };
 
 export default ManageFoodCard;
+
+
+ManageFoodCard.propTypes = {
+    food: PropTypes.object,
+}
