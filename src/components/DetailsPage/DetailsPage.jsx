@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 
 const DetailsPage = () => {
 
-    const singleFood = useLoaderData()[0];
+    const singleFood = useLoaderData();
     const {_id, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate, pickupLocation } = singleFood;
     console.log(singleFood)
     console.log(foodImage)
