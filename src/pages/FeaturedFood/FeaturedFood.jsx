@@ -17,7 +17,7 @@ const FeaturedFood = () => {
 
     return (
         <div>
-            <h1 className="text-5xl font-bold text-center my-7">Featured Food</h1>
+            <h1 className="text-5xl font-bold text-center my-7" style={{ fontFamily: 'Playpen Sans, cursive' }}>Featured <span className="text-red-400">Food</span></h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
                     allFoods?.map(food => <FoodCard key={food._id} food={food}></FoodCard>)
