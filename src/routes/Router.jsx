@@ -9,6 +9,7 @@ import DetailsPage from "../components/DetailsPage/DetailsPage";
 import AddFood from "../pages/AddFood/AddFood";
 import ManageFoods from "../pages/ManageFoods/ManageFoods";
 import UpdateFood from "../pages/UpdateFood/UpdateFood";
+import MyRequests from "../pages/MyRequests/MyRequests";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "/manageFoods",
                 element: <ManageFoods></ManageFoods>
+            },
+            {
+                path: "/myRequests",
+                element: <MyRequests></MyRequests>
             },
             {
                 path: "/detailsFood/:id",

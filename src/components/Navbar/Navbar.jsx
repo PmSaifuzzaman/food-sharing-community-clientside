@@ -67,15 +67,15 @@ const Navbar = () => {
                         <li>
                             <NavLink to={"/manageFoods"}
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-sky-400 underline font-medium" : ""
+                                    isPending ? "pending" : isActive ? "text-red-400 underline font-medium" : ""
                                 }>
                                 Manage My Foods
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to={"/contact"}
+                            <NavLink to={"/myRequests"}
                                 className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "text-sky-400 underline font-medium" : ""
+                                    isPending ? "pending" : isActive ? "text-red-400 underline font-medium" : ""
                                 }>
                                 My Food Request
                             </NavLink>
@@ -113,15 +113,15 @@ const Navbar = () => {
                     <li>
                         <NavLink to={"/manageFoods"}
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-sky-400 underline font-medium" : ""
+                                isPending ? "pending" : isActive ? "text-red-400 underline font-medium" : ""
                             }>
                             Manage My Foods
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"/contact"}
+                        <NavLink to={"/myRequests"}
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-sky-400 underline font-medium" : ""
+                                isPending ? "pending" : isActive ? "text-red-400 underline font-medium" : ""
                             }>
                             My Food Request
                         </NavLink>

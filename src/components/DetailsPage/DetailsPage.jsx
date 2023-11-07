@@ -1,13 +1,50 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
-
+import { useContext } from "react";
+import { authContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const DetailsPage = () => {
 
     const singleFood = useLoaderData();
-    const {_id, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate, pickupLocation } = singleFood;
-    console.log(singleFood)
-    console.log(foodImage)
+    const { _id, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate, pickupLocation } = singleFood;
+
+    const{user} = useContext(authContext);
+    // Extract user email from context
+    const requesterEmail = user?.email || '';
+    const requesterName = user?.displayName || '';
+    const requesterImage = user?.photoURL || '';
+    // todays date and time
+    const now = new Date();
+    const formattedDateTime = now.toISOString();
+    const requestDateTime = formattedDateTime
+
+
+    const handleRequests = () => {
+        const newRequest = {requesterEmail, requesterName, requesterImage, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate, pickupLocation, requestDateTime }
+        console.log(newRequest)
+
+        fetch("http://localhost:5000/api/v1/user/foodRequests", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newRequest),
+        })
+            .then((res) => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Added your Request Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            });
+
+    }
 
 
     return (
@@ -42,7 +79,7 @@ const DetailsPage = () => {
                             <div className="modal-action">
                                 <form method="dialog">
                                     {/* if there is a button in form, it will close the modal */}
-                                    <button className="btn  bg-red-400 text-white">Request</button>
+                                    <Link onClick={handleRequests} className="btn  bg-red-400 text-white">Request</Link>
                                     <button className="btn ml-5">Close</button>
                                 </form>
                             </div>
