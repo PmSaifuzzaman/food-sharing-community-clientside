@@ -74,7 +74,7 @@ const UpdateFood = () => {
                                 <input type="text" name="foodName" defaultValue={foodName} placeholder="Food Name" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Image Link</span>
                             </label>
@@ -93,7 +93,7 @@ const UpdateFood = () => {
                                 <input type="text" name="foodQuantity" defaultValue={foodQuantity} placeholder="Quantity of food" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Pick Up Location</span>
                             </label>
@@ -112,7 +112,7 @@ const UpdateFood = () => {
                                 <input type="date" name="expireDate" defaultValue={expireDate} placeholder="Expire date" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Details</span>
                             </label>
@@ -131,7 +131,7 @@ const UpdateFood = () => {
                                 <input type="text" name="donatorImage" defaultValue={donatorImage} placeholder="Donator Photo URL" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Donator Name</span>
                             </label>
@@ -150,12 +150,12 @@ const UpdateFood = () => {
                                 <input type="email" name="donatorEmail" defaultValue={donatorEmail} placeholder="Donator email" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Food Status</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="foodStatus" defaultValue={foodStatus} placeholder="Food Status" className="input input-bordered w-full" />
+                                <input type="text" name="foodStatus" required defaultValue={foodStatus} placeholder="Food Status" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
