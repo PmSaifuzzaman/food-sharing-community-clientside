@@ -18,7 +18,7 @@ const MyRequests = () => {
     useEffect(() => {
         if (userEmail) {
             setIsLoading(true);
-            fetch(url)
+            fetch(url, { credentials: 'include' })
                 .then(res => res.json())
                 .then(data => {
                     setMyRequests(data);
@@ -34,7 +34,7 @@ const MyRequests = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h2 className="text-4xl font-bold text-center my-4">My requests</h2>
+            <h2 className="text-4xl font-bold text-center my-5" style={{ fontFamily: 'Playpen Sans, cursive' }}>My requests</h2>
             <div>
                 {isLoading ? (
                     <progress className="progress w-56"></progress>

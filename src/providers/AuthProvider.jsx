@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import PropTypes from 'prop-types';
 import app from "../firebase/firebase.config";
+import axios from "axios";
 
 
 export const authContext = createContext(null);
@@ -36,9 +37,28 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            // For jwt
+            const userEmail = currentUser?.email || user?.email
+            const loggedUser = {email: userEmail}
+
             console.log("User in the current auth state", currentUser)
             setUser(currentUser);
             setLoading(false);
+
+            // If there is a user then issue a token by Jwt
+            if(currentUser){
+                axios.post('http://localhost:5000/api/v1/auth/access-token', loggedUser, {withCredentials:true})
+                .then(res => {
+                    console.log(res.data)
+                })
+            }
+            else{
+                axios.post('http://localhost:5000/api/v1/auth/logout', loggedUser, {withCredentials:true})
+                .then(res => {
+                    console.log(res.data)
+                })
+            }
+
         })
         return unSubscribe;
     }, []);
