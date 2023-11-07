@@ -65,10 +65,10 @@ const AddFood = () => {
                                 <span className="label-text">Food Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="foodName" placeholder="Food Name" className="input input-bordered w-full" />
+                                <input type="text" name="foodName" required placeholder="Food Name" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Image Link</span>
                             </label>
@@ -87,12 +87,12 @@ const AddFood = () => {
                                 <input type="text" name="foodQuantity" placeholder="Quantity of food" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Pick Up Location</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="pickupLocation" placeholder="Pickup Location" className="input input-bordered w-full" />
+                                <input type="text" name="pickupLocation" required placeholder="Pickup Location" className="input input-bordered w-full" />
                             </label>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ const AddFood = () => {
                                 <input type="date" name="expireDate" placeholder="Expire date" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Details</span>
                             </label>
@@ -125,7 +125,7 @@ const AddFood = () => {
                                 <input type="text" name="donatorImage" placeholder="Donator Photo URL" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Donator Name</span>
                             </label>
@@ -141,10 +141,10 @@ const AddFood = () => {
                                 <span className="label-text">Donator email</span>
                             </label>
                             <label className="input-group">
-                                <input type="email" name="donatorEmail" placeholder="Donator email" className="input input-bordered w-full" />
+                                <input type="email" name="donatorEmail" required placeholder="Donator email" className="input input-bordered w-full" />
                             </label>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
+                        <div className="form-control md:w-1/2 md:ml-4">
                             <label className="label">
                                 <span className="label-text">Food Status</span>
                             </label>
