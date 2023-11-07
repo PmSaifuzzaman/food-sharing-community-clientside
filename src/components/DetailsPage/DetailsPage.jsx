@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { authContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
+
 const DetailsPage = () => {
 
     const singleFood = useLoaderData();
@@ -79,7 +80,7 @@ const DetailsPage = () => {
                             <div className="modal-action">
                                 <form method="dialog">
                                     {/* if there is a button in form, it will close the modal */}
-                                    <Link onClick={handleRequests} className="btn  bg-red-400 text-white">Request</Link>
+                                    <Link onClick={handleRequests} to={"/myRequests"} className="btn  bg-red-400 text-white">Request</Link>
                                     <button className="btn ml-5">Close</button>
                                 </form>
                             </div>

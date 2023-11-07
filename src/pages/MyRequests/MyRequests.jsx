@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { authContext } from "../../providers/AuthProvider";
-import ManageFoodCard from "../ManageFoods/ManageFoodCard";
+import MyRequestsCard from "./MyRequestsCard";
+
 
 
 const MyRequests = () => {
@@ -33,13 +34,13 @@ const MyRequests = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h2>My requests</h2>
+            <h2 className="text-4xl font-bold text-center my-4">My requests</h2>
             <div>
                 {isLoading ? (
                     <progress className="progress w-56"></progress>
                 ) : (
                     myRequests?.map(food => (
-                        <ManageFoodCard key={food._id} food={food} />
+                        <MyRequestsCard key={food._id} food={food} />
                     ))
                 )}
             </div>
