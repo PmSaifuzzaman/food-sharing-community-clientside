@@ -26,7 +26,7 @@ const DetailsPage = () => {
         const newRequest = {requesterEmail, requesterName, requesterImage, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate, pickupLocation, requestDateTime }
         console.log(newRequest)
 
-        fetch("http://localhost:5000/api/v1/user/foodRequests", {
+        fetch("https://food-sharing-community-server.vercel.app/api/v1/user/foodRequests", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

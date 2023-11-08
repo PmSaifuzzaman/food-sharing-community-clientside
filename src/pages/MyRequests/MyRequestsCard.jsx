@@ -21,7 +21,7 @@ const MyRequestsCard = ({ food, myRequests, setMyRequests }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/api/v1/user/foodRequests/${_id}`, {
+                fetch(`https://food-sharing-community-server.vercel.app/api/v1/user/foodRequests/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

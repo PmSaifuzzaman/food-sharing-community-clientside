@@ -47,13 +47,13 @@ const AuthProvider = ({ children }) => {
 
             // If there is a user then issue a token by Jwt
             if(currentUser){
-                axios.post('http://localhost:5000/api/v1/auth/access-token', loggedUser, {withCredentials:true})
+                axios.post('https://food-sharing-community-server.vercel.app/api/v1/auth/access-token', loggedUser, {withCredentials:true})
                 .then(res => {
                     console.log(res.data)
                 })
             }
             else{
-                axios.post('http://localhost:5000/api/v1/auth/logout', loggedUser, {withCredentials:true})
+                axios.post('https://food-sharing-community-server.vercel.app/api/v1/auth/logout', loggedUser, {withCredentials:true})
                 .then(res => {
                     console.log(res.data)
                 })

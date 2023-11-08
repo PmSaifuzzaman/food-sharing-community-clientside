@@ -14,7 +14,7 @@ const MyRequests = () => {
     const userEmail = user ? user.email : '';
     console.log(userEmail);
 
-    const url = `http://localhost:5000/api/v1/user/foodRequests?requesterEmail=${userEmail}`;
+    const url = `https://food-sharing-community-server.vercel.app/api/v1/user/foodRequests?requesterEmail=${userEmail}`;
 
     useEffect(() => {
         if (userEmail) {

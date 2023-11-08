@@ -24,7 +24,7 @@ const AddFood = () => {
 
         // Send data to server
 
-        fetch("http://localhost:5000/api/v1/addFood", {
+        fetch("https://food-sharing-community-server.vercel.app/api/v1/addFood", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

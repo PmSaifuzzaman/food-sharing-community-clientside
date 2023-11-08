@@ -20,7 +20,7 @@ const ManageFoodCard = ({ food, manageFoods, setManageFoods }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/api/v1/availableAllfoods/${_id}`, {
+                fetch(`https://food-sharing-community-server.vercel.app/api/v1/availableAllfoods/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
