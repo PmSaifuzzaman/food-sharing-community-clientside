@@ -9,7 +9,10 @@ const OurMission = () => {
 
 
     useEffect(() => {
-        Aos.init()
+        Aos.init({
+            duration: 800,
+            offset: 100,
+        })
     }, [])
 
 

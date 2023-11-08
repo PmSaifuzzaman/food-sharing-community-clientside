@@ -6,7 +6,7 @@ import { ToastContainer, } from "react-toastify";
 
 const MainLayout = () => {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="lg:max-w-7xl lg:mx-auto">
             <Outlet></Outlet>
             <ToastContainer></ToastContainer>
         </div>

@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { authContext } from "../../providers/AuthProvider";
 import ManageFoodCard from "./ManageFoodCard";
-import Footer from "../../components/Footer/Footer";
+
 
 const ManageFoods = () => {
     const [manageFoods, setManageFoods] = useState([]);
@@ -17,7 +17,7 @@ const ManageFoods = () => {
     useEffect(() => {
         if (userEmail) {
             setIsLoading(true);
-            fetch(url, { credentials: 'include' })
+            fetch(url,)
                 .then(res => res.json())
                 .then(data => {
                     setManageFoods(data);
@@ -43,9 +43,7 @@ const ManageFoods = () => {
                     ))
                 )}
             </div>
-            <div className="fixed bottom-0 left-0 right-0  text-white">
-                <Footer></Footer>
-            </div>
+            
         </div>
     );
 };

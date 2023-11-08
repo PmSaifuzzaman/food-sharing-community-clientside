@@ -14,7 +14,10 @@ const FeaturedFood = () => {
             .then(res => res.json())
             .then(data => setAllFoods(data))
 
-        Aos.init();
+        Aos.init({
+            duration: 800,
+            offset: 100,
+        });
     }, [])
 
     console.log(allFoods)

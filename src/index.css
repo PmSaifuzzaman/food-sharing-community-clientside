@@ -4,3 +4,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  
+  /* Rest of your CSS styles */
+  

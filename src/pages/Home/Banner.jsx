@@ -6,13 +6,17 @@ import 'aos/dist/aos.css';
 const Banner = () => {
 
     useEffect(() => {
-      Aos.init(); 
+      Aos.init({
+        duration: 800, 
+        offset: 100,
+      });
+       
     }, [])
 
     return (
         <div className="hero" >
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={bannerImg} className="lg:max-w-lg" data-aos="fade-left" />
+                <img src={bannerImg} className="lg:max-w-lg" data-aos="slide-left" />
                 <div data-aos="fade-right">
                     <h1 className="text-5xl font-bold" style={{ fontFamily: 'Playpen Sans, cursive' }}>We accept <span className="text-red-400">food</span> sharing</h1>
                     <p className="py-6 text-xl" style={{ fontFamily: 'Playpen Sans, cursive' }}>We are looking for your Surplus. Food is the ingredient that binds us all, and sharing it is a celebration of our shared humanity.Food tastes better when shared with friends.</p>
