@@ -16,11 +16,11 @@ const Charity = () => {
 
     return (
         <div>
-            <h1 className="text-5xl font-bold text-center mb-10" data-aos="slide-right" style={{ fontFamily: 'Playpen Sans, cursive' }}>We are non-profit Charity & <br /> <span className="text-red-400">NGO Organizarion</span></h1>
+            <h1 className="text-5xl font-bold text-center mb-10" data-aos="flip-down" style={{ fontFamily: 'Playpen Sans, cursive' }}>We are non-profit Charity & <br /> <span className="text-red-400">NGO Organizarion</span></h1>
 
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10" data-aos="zoom-out-down">
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10" >
                 {/* card 1 */}
-                <div className="card  bg-base-100 border">
+                <div className="card  bg-base-100 border" data-aos="zoom-in-up">
                     <figure className="px-10 pt-10">
                         <img src={donation} alt="Shoes" className="rounded-xl" />
                     </figure>
@@ -33,7 +33,7 @@ const Charity = () => {
                     </div>
                 </div>
                 {/* card 2 */}
-                <div className="card  bg-base-100 border">
+                <div className="card  bg-base-100 border" data-aos="zoom-in-up">
                     <figure className="px-10 pt-10">
                         <img src={fundrising} alt="Shoes" className="rounded-xl" />
                     </figure>
@@ -46,7 +46,7 @@ const Charity = () => {
                     </div>
                 </div>
                 {/* card 3 */}
-                <div className="card  bg-base-100 border">
+                <div className="card  bg-base-100 border" data-aos="zoom-in-up">
                     <figure className="px-10 pt-10">
                         <img src={volunteer} alt="Shoes" className="rounded-xl" />
                     </figure>

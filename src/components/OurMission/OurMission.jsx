@@ -19,7 +19,7 @@ const OurMission = () => {
     return (
         <div>
             <div className="hero lg:max-w-6xl mx-auto">
-                <div className="hero-content flex-col gap-10 lg:flex-row" data-aos="slide-left">
+                <div className="hero-content flex-col gap-10 lg:flex-row" data-aos="flip-down">
                     <img src={mission} className="lg:max-w-md rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold" style={{ fontFamily: 'Playpen Sans, cursive' }}> Our <span className="text-red-400">Mission</span></h1>
@@ -29,7 +29,7 @@ const OurMission = () => {
                 </div>
             </div>
             <div className="hero lg:max-w-6xl mx-auto">
-                <div className="hero-content flex-col-reverse gap-10 lg:flex-row-reverse" data-aos="slide-right">
+                <div className="hero-content flex-col-reverse gap-10 lg:flex-row-reverse" data-aos="flip-up">
                     <img src={vission} className="lg:max-w-md rounded-lg shadow-2xl" />
                     <div>
                         <h1 className="text-5xl font-bold" style={{ fontFamily: 'Playpen Sans, cursive' }}>Our <span className="text-red-400">Vision</span></h1>
