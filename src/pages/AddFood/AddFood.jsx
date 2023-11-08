@@ -41,7 +41,7 @@ const AddFood = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
-                    event.target.reset();
+                    // event.target.reset();
                 }
             });
 

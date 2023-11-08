@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { authContext } from "../../providers/AuthProvider";
 import MyRequestsCard from "./MyRequestsCard";
+import Footer from "../../components/Footer/Footer";
 
 
 
@@ -44,6 +45,7 @@ const MyRequests = () => {
                     ))
                 )}
             </div>
+            <Footer></Footer>
         </div>
     );
 };

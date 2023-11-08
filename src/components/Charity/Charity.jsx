@@ -1,13 +1,21 @@
+import { useEffect } from "react";
 import donation from "../../assets/logo/donation.png"
 import fundrising from "../../assets/logo/fundrising.png"
 import volunteer from "../../assets/logo/volunteer.png"
+import Aos from "aos";
+import 'aos/dist/aos.css';
 
 const Charity = () => {
+    useEffect(() => {
+        Aos.init();
+    }, [])
+
+
     return (
         <div>
-            <h1 className="text-5xl font-bold text-center mb-10" style={{ fontFamily: 'Playpen Sans, cursive' }}>We are non-profit Charity & <br /> <span className="text-red-400">NGO Organizarion</span></h1>
+            <h1 className="text-5xl font-bold text-center mb-10" data-aos="slide-right" style={{ fontFamily: 'Playpen Sans, cursive' }}>We are non-profit Charity & <br /> <span className="text-red-400">NGO Organizarion</span></h1>
 
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10">
+            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10" data-aos="zoom-out-down">
                 {/* card 1 */}
                 <div className="card  bg-base-100 border">
                     <figure className="px-10 pt-10">

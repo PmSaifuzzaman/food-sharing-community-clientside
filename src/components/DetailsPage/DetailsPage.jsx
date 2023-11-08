@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { useContext } from "react";
 import { authContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import Footer from "../Footer/Footer";
 
 
 const DetailsPage = () => {
@@ -88,6 +89,7 @@ const DetailsPage = () => {
                     </dialog>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

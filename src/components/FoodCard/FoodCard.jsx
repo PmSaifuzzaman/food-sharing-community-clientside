@@ -1,12 +1,20 @@
+import Aos from 'aos';
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import 'aos/dist/aos.css';
+
+
 
 const FoodCard = ({ food }) => {
     const {_id, foodImage, foodName, donatorImage, donatorName, foodQuantity, expireDate } = food;
 
+    useEffect(() => {
+        Aos.init();
+    }, [])
 
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-base-100 shadow-xl" data-aos="zoom-in-down">
             <figure><img className='h-40 w-full object-cover' src={foodImage} alt="Food" /></figure>
             <div className="card-body">
                 <h2 className="card-title">

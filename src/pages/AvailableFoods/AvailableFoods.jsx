@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import FoodCard from "../../components/FoodCard/FoodCard";
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import Footer from "../../components/Footer/Footer";
 
 
 const AvailableFoods = () => {
@@ -55,7 +56,7 @@ const AvailableFoods = () => {
                 }
             </div>
             {/* Pagination section for Displaying 9 cards */}
-            <div className="flex justify-center">
+            <div className="flex justify-center my-5">
                 <div className="join ">
                     <button
                         onClick={() => setCurrentPage(currentPage - 1)}
@@ -82,7 +83,7 @@ const AvailableFoods = () => {
                     </button>
                 </div>
             </div>
-
+              <Footer></Footer>          
         </div>
     );
 };

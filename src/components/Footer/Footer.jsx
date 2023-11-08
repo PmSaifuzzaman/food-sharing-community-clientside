@@ -2,7 +2,7 @@ import logo from "../../assets/logo/logo-removebg.png"
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-base-200 text-primary-content">
+        <footer className="footer footer-center p-5 bg-base-200 text-primary-content">
             <aside>
                 <img className="w-40" src={logo} alt="" />
                 <p className="font-bold text-black">

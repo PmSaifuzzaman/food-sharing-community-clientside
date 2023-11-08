@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { authContext } from "../../providers/AuthProvider";
 import ManageFoodCard from "./ManageFoodCard";
+import Footer from "../../components/Footer/Footer";
 
 const ManageFoods = () => {
     const [manageFoods, setManageFoods] = useState([]);
@@ -16,7 +17,7 @@ const ManageFoods = () => {
     useEffect(() => {
         if (userEmail) {
             setIsLoading(true);
-            fetch(url)
+            fetch(url, { credentials: 'include' })
                 .then(res => res.json())
                 .then(data => {
                     setManageFoods(data);
@@ -32,7 +33,7 @@ const ManageFoods = () => {
     return (
         <div>
             <Navbar />
-            
+
             <div>
                 {isLoading ? (
                     <progress className="progress w-56"></progress>
@@ -41,6 +42,9 @@ const ManageFoods = () => {
                         <ManageFoodCard key={food._id} food={food} manageFoods={manageFoods} setManageFoods={setManageFoods} />
                     ))
                 )}
+            </div>
+            <div className="fixed bottom-0 left-0 right-0  text-white">
+                <Footer></Footer>
             </div>
         </div>
     );
